@@ -34,6 +34,11 @@ FlowRouter.route '/randomlist',
     return
   name: 'Random List'
 
+FlowRouter.route '/about',
+  action: ->
+    BlazeLayout.render 'layout', content: 'about'
+    return
+  name: 'About Us'
 
 AccountsTemplates.configureRoute 'signIn', path: '/login'
 AccountsTemplates.configureRoute 'signUp', path: '/signup'
