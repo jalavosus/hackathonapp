@@ -24,8 +24,6 @@ template(name="profile")
           input(type="number" name="num" placeholder="613")
         button.ui.button(type="submit") Submit
               
-  else
-    if currentUser
       div.container(id="profile_me")
         div.ui.card
           div.content
@@ -37,6 +35,5 @@ template(name="profile")
               | Phone number: {{currentUser.phone}}
             div.ui.sub.header 
               | Current Requested Misheberachs: {{currentUser.mishebnum}}
-      else 
-        {{ logggg }}
+
           
