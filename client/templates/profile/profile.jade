@@ -25,15 +25,18 @@ template(name="profile")
         button.ui.button(type="submit") Submit
               
   else
-    div.container(id="profile_me")
-      div.ui.card
-        div.content
-          div.header {{currentUser.firstname}} {{currentUser.lastname}}
-        div.content
-          div.ui.sub.header
-            | Email address: {{email}}
-          div.ui.sub.header 
-            | Phone number: {{currentUser.phone}}
-          div.ui.sub.header 
-            | Current Requested Misheberachs: {{currentUser.mishebnum}}
+    if currentUser
+      div.container(id="profile_me")
+        div.ui.card
+          div.content
+            div.header {{currentUser.firstname}} {{currentUser.lastname}}
+          div.content
+            div.ui.sub.header
+              | Email address: {{email}}
+            div.ui.sub.header 
+              | Phone number: {{currentUser.phone}}
+            div.ui.sub.header 
+              | Current Requested Misheberachs: {{currentUser.mishebnum}}
+      else 
+        {{ logggg }}
           

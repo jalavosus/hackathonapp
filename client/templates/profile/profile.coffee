@@ -3,6 +3,8 @@ Template.profile.helpers
     return Meteor.user().emails[0].address
   firstlogin: ->
     return Session.get 'firstlogin'
+  logggg: ->
+    FlowRouter.go("/login")
 # Template.profile.onCreated ->
 #   Session.set 'firstlogin', true
 Template.profile.onRendered ->
