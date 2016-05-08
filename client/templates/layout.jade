@@ -1,17 +1,26 @@
 template(name="layout")
   div.container
     div.row
-      div.ui.secondary.menu
+      div.ui.blue.inverted.borderless.attached.menu
         a.brand.item MyMisheberach
         a.item(href="/") Home 
         a.item Rando List
         a.item About Us 
-        
+        //- 
+        //- {{#if currentUser}}
+        //-   div.right.menu
+        //-     a.item {{currentUser.username}}
+        //-     a.item(href=addperson) Add a Peep
+        //-     a.item Logout
+        //- {{#else}}
         div.right.menu
-          a.item Login
-          a.item Signup
+          a.item(href="login") Login
+          a.item(href="signup") Signup
           a.item(href="addperson") Add a Peep
+        //- {{/if}}
         
     div.container
       div.ui.centered.grid
-        {{> yield}}
+        div.row
+          main
+            {{>Template.dynamic template=content}}

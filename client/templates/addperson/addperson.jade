@@ -30,12 +30,12 @@ template(name="addperson")
           div.ui.eight.wide.field 
             label Whereabouts do they live?
             input(type="text" name="location" placeholder="Bumshart, Nebrahoma")
-        div.sixteen.wide.field(id="expiry")
-          label Is there a cutoff point for their refuah (ie. for surgery)?
-          input(type="text" id="datepicker")
+        //- div.sixteen.wide.field(id="expiry")
+        //-   label Is there a cutoff point for their refuah (ie. for surgery)?
+        //-   input(type="text" id="datepicker")
         div.sixteen.wide.field(id="extrashit")
           label Anything else you want to add?
           input(type="text" name="extra" placeholder="They have wonderful middos!")
         div.
-        button.ui.button(type="submit") Submit
+        button.ui.button(type="submit", id="personsubmit") Submit
       
