@@ -1,0 +1,41 @@
+template(name="addperson")
+  header
+    div.container(id="formcontainer")
+      h1 Add a person to daven for!
+      
+      form.ui.form(id="new-person")
+        div.fields
+          div.ui.eight.wide.field
+            label Hebrew name
+            input(type="text" name="hebrewname" placeholder="Ploni ben Ploni")
+          div.ui.eight.wide.field
+            label Legal name
+            input(type="text" name="legalname" placeholder="Jack Daniels")
+        div.fields
+          div.ui.eight.wide.field
+            label What should we daven for?
+            select.ui.dropdown(name="dickshart" id="select")
+              option(value="default") Select...
+              option(value="refuah") Refuah Shleima
+              option(value="parnassah") Parnassah
+              option(value="shidduch") Shidduch
+              i.dropdown.icon
+          div.ui.six.wide.field(id="illnesshide")
+            label Moo
+            input(type="text" name="illnesstype" placeholder="SuperAIDS")
+        div.fields
+          div.ui.eight.wide.field 
+            label How old are they?
+            input(type="text" name="age" placeholder="18")
+          div.ui.eight.wide.field 
+            label Whereabouts do they live?
+            input(type="text" name="location" placeholder="Bumshart, Nebrahoma")
+        div.sixteen.wide.field(id="expiry")
+          label Is there a cutoff point for their refuah (ie. for surgery)?
+          input(type="text" id="datepicker")
+        div.sixteen.wide.field(id="extrashit")
+          label Anything else you want to add?
+          input(type="text" name="extra" placeholder="They have wonderful middos!")
+        div.
+        button.ui.button(type="submit") Submit
+      
