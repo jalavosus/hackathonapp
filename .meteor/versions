@@ -68,9 +68,11 @@ reactive-var@1.0.9
 reload@1.1.8
 retry@1.0.7
 routepolicy@1.0.10
+semantic:ui-card@2.1.7
 semantic:ui-css@2.1.2
 semantic:ui-dropdown@2.1.7
 service-configuration@1.0.9
+session@1.1.5
 sha@1.0.7
 softwarerero:accounts-t9n@1.3.3
 spacebars@1.0.11

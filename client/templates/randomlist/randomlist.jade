@@ -1,0 +1,18 @@
+template(name="randomlist")
+  div.row
+  div.ui.one.column.stackable.grid.container
+    div.ui.centered.cards
+      each person in get_peeps 
+          div.ui.card
+            div.content 
+              div.left.floated.header {{person.hebrewname}}
+            div.content 
+              div.ui.left.floated.subheader {{person.legalname}}
+              br
+              div.left.floated.meta age {{person.age}} from {{person.location}}
+              br
+              if person.refuah
+                div.left.floated.description Please pray for {{person.hebrewname}}'s speedy recovery from {{person.refuah}}.
+              else
+                div.left.floated.description Please pray for {{person.hebrewname}} to find {{person.todavenfor}} in the coming future.
+          

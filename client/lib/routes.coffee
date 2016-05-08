@@ -22,6 +22,19 @@ FlowRouter.route '/signup',
     return
   name: 'Sign up'
 
+FlowRouter.route '/profile',
+  action: ->
+    BlazeLayout.render 'layout', content: 'profile'
+    return
+  name: 'Profile'
+
+FlowRouter.route '/randomlist',
+  action: ->
+    BlazeLayout.render 'layout', content: 'randomlist'
+    return
+  name: 'Random List'
+
+
 AccountsTemplates.configureRoute 'signIn', path: '/login'
 AccountsTemplates.configureRoute 'signUp', path: '/signup'
 

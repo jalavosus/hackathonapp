@@ -1,0 +1,39 @@
+template(name="profile")
+  if firstlogin
+    div.container(id="profilecont")
+      form.ui.form(id="userinfo")
+        div.fields
+          div.ui.sixteen.wide.field
+            label What's your first name?
+            input(type="text" name="firstname" placeholder="John")
+          div.ui.sixteen.wide.field
+            label And your last name?
+            input(type="text" name="lastname" placeholder="Smith")
+
+        div.ui.sixteen.wide.field 
+          label Do you want to receive Misheberach's via text messages, emails, or both?
+          div.ui.three.item.menu
+            a.item(id='menuitem') Texts
+            a.item(id='menuitem') Emails
+            a.item(id='menuitem') Both
+        div.field(id="texts")
+          label So, what's your phone number?
+          input(type="text" name="phone" placeholder="(111) 222-3333")
+        div.field(id="nums")
+          label How many Misheberach's do you want to receive each day?
+          input(type="number" name="num" placeholder="613")
+        button.ui.button(type="submit") Submit
+              
+  else
+    div.container(id="profile_me")
+      div.ui.card
+        div.content
+          div.header {{currentUser.firstname}} {{currentUser.lastname}}
+        div.content
+          div.ui.sub.header
+            | Email address: {{email}}
+          div.ui.sub.header 
+            | Phone number: {{currentUser.phone}}
+          div.ui.sub.header 
+            | Current Requested Misheberachs: {{currentUser.mishebnum}}
+          

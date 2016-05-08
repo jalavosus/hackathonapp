@@ -1,3 +1,6 @@
 template(name="signup")
-  div.container(id="signup")
-    {{> atForm state='signUp'}}
+  if currentUser
+    {{ profiler }}
+  else
+    div.container(id="signup")
+      {{> atForm state='signUp'}}

@@ -29,3 +29,5 @@ accounts-password
 kadira:flow-router
 kadira:blaze-layout
 useraccounts:flow-routing
+semantic:ui-card
+session

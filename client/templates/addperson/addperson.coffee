@@ -3,8 +3,6 @@ Meteor.subscribe 'people'
 
 Template.addperson.onRendered ->
   @$('#select').dropdown()
-  @$("#datepicker").datepicker()
-  #console.log "Carl"
   @$('#illnesshide').hide()
   return
 
@@ -18,8 +16,8 @@ Template.addperson.events
     person = {}
     person['hebrewname'] = target.hebrewname.value
     person['legalname'] = target.legalname.value
-    person['todavenfor'] = target.dickshart.value
-    if target.dickshart.value == "refuah"
+    person['todavenfor'] = target.daventype.value
+    if target.daventype.value == "refuah"
       person['refuah'] = target.illnesstype.value
     person['age'] = target.age.value
     person['location'] = target.location.value

@@ -4,23 +4,22 @@ template(name="layout")
       div.ui.blue.inverted.borderless.attached.menu
         a.brand.item MyMisheberach
         a.item(href="/") Home 
-        a.item Rando List
+        a.item(href="randomlist") Rando List
         a.item About Us 
-        //- 
-        //- {{#if currentUser}}
-        //-   div.right.menu
-        //-     a.item {{currentUser.username}}
-        //-     a.item(href=addperson) Add a Peep
-        //-     a.item Logout
-        //- {{#else}}
-        div.right.menu
-          a.item(href="login") Login
-          a.item(href="signup") Signup
-          a.item(href="addperson") Add a Peep
+        
+        if currentUser
+          div.right.menu
+            a.item(href="addperson") Add a Misheberach
+            a.item(href="profile") Profile Preferences
+            a.item(id="logout") Logout
+        else
+          div.right.menu
+            a.item(href="login") Login
+            a.item(href="signup") Signup
+            a.item(href="addperson") Add a Misheberach
+            a.item(href="profile") Profile
         //- {{/if}}
         
-    div.container
-      div.ui.centered.grid
-        div.row
-          main
-            {{>Template.dynamic template=content}}
+  main
+    div.ui.centered.grid
+      {{>Template.dynamic template=content}}
