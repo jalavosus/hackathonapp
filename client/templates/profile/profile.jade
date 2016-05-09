@@ -23,17 +23,20 @@ template(name="profile")
           label How many Misheberach's do you want to receive each day?
           input(type="number" name="num" placeholder="613")
         button.ui.button(type="submit") Submit
-              
-      div.container(id="profile_me")
-        div.ui.card
-          div.content
-            div.header {{currentUser.firstname}} {{currentUser.lastname}}
-          div.content
-            div.ui.sub.header
-              | Email address: {{email}}
-            div.ui.sub.header 
-              | Phone number: {{currentUser.phone}}
-            div.ui.sub.header 
-              | Current Requested Misheberachs: {{currentUser.mishebnum}}
+  else
+    if currentUser      
+        div.container(id="profile_me")
+          div.ui.card
+            div.content
+              div.header {{currentUser.firstname}} {{currentUser.lastname}}
+            div.content
+              div.ui.sub.header
+                | Email address: {{email}}
+              div.ui.sub.header 
+                | Phone number: {{currentUser.phone}}
+              div.ui.sub.header 
+                | Current Requested Misheberachs: {{currentUser.mishebnum}}
+      else 
+        {{ changepage }}
 
           
