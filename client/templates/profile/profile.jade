@@ -1,5 +1,5 @@
 template(name="profile")
-  if firstlogin
+  if setupvar
     div.container(id="profilecont")
       form.ui.form(id="userinfo")
         div.fields
@@ -22,7 +22,7 @@ template(name="profile")
         div.field(id="nums")
           label How many Misheberach's do you want to receive each day?
           input(type="number" name="num" placeholder="613")
-        button.ui.button(type="submit") Submit
+        button.ui.button(type="submit" id="editsubmit") Submit
   else
     if currentUser      
         div.container(id="profile_me")
@@ -36,6 +36,7 @@ template(name="profile")
                 | Phone number: {{currentUser.phone}}
               div.ui.sub.header 
                 | Current Requested Misheberachs: {{currentUser.mishebnum}}
+            div.ui.bottom.attached.button(id="editprefs") Edit
       else 
         {{ changepage }}
 

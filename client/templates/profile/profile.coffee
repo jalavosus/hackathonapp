@@ -1,8 +1,8 @@
 Template.profile.helpers
   email: ->
     return Meteor.user().emails[0].address
-  firstlogin: ->
-    return Session.get 'firstlogin'
+  setupvar: ->
+    return Session.get 'setupvar'
   changepage: ->
     FlowRouter.go("/login")
 # Template.profile.onCreated ->
@@ -10,7 +10,7 @@ Template.profile.helpers
 Template.profile.onRendered ->
     @$('#texts').hide()
     @$('#nums').hide()
-    @$('.ui.button').hide()
+    @$('#editsubmit').hide()
 
 Template.profile.events
   'click a.item': (event) ->
@@ -24,7 +24,7 @@ Template.profile.events
       $('#texts').hide()
       Session.set('messagetype', 'emails')
     $('#nums').show()
-    $('.ui.button').show()
+    $('#editsubmit').show()
     return
   'submit #userinfo': (event) ->
     userinfo = {}
@@ -38,6 +38,9 @@ Template.profile.events
       'mishebnum': target.num.value,
       }})
     console.log Meteor.users.findOne({_id: Meteor.user()._id})
-    Session.set('firstlogin', false)
-
+    Session.set('setupvar', false)
+    return
+  'click #editprefs': ->
+    Session.set('setupvar', true)
+    FlowRouter.reload()
     return
